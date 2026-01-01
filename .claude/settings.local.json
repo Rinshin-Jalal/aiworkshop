@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_compound-engineering_pw__browser_navigate",
+      "mcp__plugin_compound-engineering_pw__browser_console_messages",
+      "mcp__plugin_compound-engineering_pw__browser_network_requests",
+      "mcp__plugin_compound-engineering_pw__browser_evaluate",
+      "Bash(curl:*)",
+      "Bash(npm install:*)",
+      "mcp__plugin_compound-engineering_pw__browser_wait_for",
+      "mcp__plugin_compound-engineering_pw__browser_take_screenshot"
+    ]
+  }
+}

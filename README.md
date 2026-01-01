@@ -12,9 +12,32 @@ View your app in AI Studio: https://ai.studio/apps/drive/1Un7CmJbTu-oqPVMYhtZcKR
 
 **Prerequisites:**  Node.js
 
+### Setup
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Set up environment variables by creating a `.env.local` file:
+
+   ```bash
+   # Gemini API for AI recommendations
+   GEMINI_API_KEY=your_gemini_api_key
+
+   # Supabase for database (required for real data persistence)
+   # Get these from https://supabase.com/dashboard
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+3. **Set up Supabase database:**
+   - Create a new project at [supabase.com](https://supabase.com)
+   - Go to the SQL Editor and run the schema from `supabase/schema.sql`
+   - Copy your Project URL and Anon Key from Project Settings > API
+   - Add them to your `.env.local` file
+
+4. Run the app:
+   ```bash
+   npm run dev
+   ```

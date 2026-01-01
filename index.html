@@ -8,48 +8,79 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Permanent+Marker&family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Patrick+Hand&family=Permanent+Marker&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --paper-color: #f0f0eb;
+      --ink-color: #1a1a1a;
+    }
     body {
-      font-family: 'Space Grotesk', sans-serif;
-      background-color: #f4f1ea;
-      background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+      font-family: 'Patrick Hand', cursive;
+      background-color: var(--paper-color);
+      /* Subtle noise texture */
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+      color: var(--ink-color);
     }
-    .handwritten {
-      font-family: 'Indie Flower', cursive;
+    
+    .font-display {
+      font-family: 'Anton', sans-serif;
     }
-    .doodle-header {
+    
+    .font-marker {
       font-family: 'Permanent Marker', cursive;
     }
-    .paper-texture {
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    
+    .font-body {
+      font-family: 'Space Grotesk', sans-serif;
     }
-    .brutalist-border {
-      border: 3px solid #000;
-      box-shadow: 4px 4px 0px 0px #000;
+
+    .sketchy-border {
+      border: 2px solid var(--ink-color);
+      border-radius: 2px 255px 3px 25px / 255px 5px 225px 3px;
+      box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
     }
-    .brutalist-button {
-      border: 3px solid #000;
-      box-shadow: 4px 4px 0px 0px #000;
-      transition: all 0.2s;
+    
+    .sketchy-card {
+      background: white;
+      border: 2px solid var(--ink-color);
+      border-radius: 5px 225px 3px 25px / 225px 3px 255px 15px;
+      box-shadow: 5px 5px 0px 0px var(--ink-color); 
     }
-    .brutalist-button:active {
-      box-shadow: 0px 0px 0px 0px #000;
-      transform: translate(4px, 4px);
+    
+    .sketchy-button {
+      background: var(--ink-color);
+      color: white;
+      border: none;
+      border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+      padding: 0.5rem 1.5rem;
+      font-family: 'Permanent Marker', cursive;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s;
+    }
+    .sketchy-button:hover {
+      transform: scale(1.02) rotate(-1deg);
+    }
+    
+    /* Sketchy underline helper */
+    .sketch-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .sketch-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 4px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0 5 Q 50 10 100 5' stroke='%231a1a1a' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat center bottom;
+      background-size: 100% 100%;
     }
   </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
-  }
-}
-</script>
 </head>
 <body>
   <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
