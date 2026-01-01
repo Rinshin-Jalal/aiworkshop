@@ -8,12 +8,11 @@ const Footer: React.FC = () => {
         
         {/* SIO Karuvarakundu Section */}
         <div className="flex items-center gap-4 group">
-          <div className="w-16 h-16 brutalist-border bg-white flex items-center justify-center p-2 transition-transform group-hover:-rotate-3">
-             <svg viewBox="0 0 100 100" className="w-full h-full text-black">
-                <path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="currentColor" strokeWidth="8"/>
-                <path d="M40 40 L60 40 L60 60 L40 60 Z" fill="currentColor"/>
-             </svg>
-          </div>
+          <img
+            src="./siologo.png"
+            alt="SIO Logo"
+            className="w-16 h-16 brutalist-border bg-white p-2 transition-transform group-hover:-rotate-3 object-contain"
+          />
           <div className="text-left">
             <h4 className="text-3xl font-black uppercase leading-none tracking-tighter">SIO</h4>
             <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-80">Karuvarakundu</p>
@@ -36,15 +35,11 @@ const Footer: React.FC = () => {
 
         {/* UFUQ Branding Section */}
         <div className="flex items-center gap-5 group">
-          <div className="text-right hidden md:block">
-            <h4 className="text-xl font-black uppercase leading-tight tracking-tighter">UFUQ</h4>
-            <p className="text-[10px] font-bold uppercase opacity-70">Science & Technology Fest</p>
-          </div>
-          <div className="w-20 h-20 rounded-full border-4 border-black bg-white flex items-center justify-center p-3 rotate-6 group-hover:rotate-0 transition-transform shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full text-pink-600">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
+          <img
+            src="./ufuq_desc.png"
+            alt="UFUQ Description"
+            className="h-20 w-auto object-contain group-hover:scale-105 transition-transform"
+          />
         </div>
       </div>
 

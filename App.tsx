@@ -30,7 +30,8 @@ const App: React.FC = () => {
               <div className="brutalist-border p-8 bg-green-50 rounded-xl text-center space-y-4">
                 <h2 className="doodle-header text-4xl text-green-700">See you there!</h2>
                 <p className="text-xl font-medium text-black">Your registration for "The Real AI Advantage" has been saved.</p>
-                <button 
+                <RegistrationForm onComplete={() => setIsSuccess(false)} showSuccess={true} />
+                <button
                   onClick={() => setIsSuccess(false)}
                   className="brutalist-button bg-white px-6 py-2 font-bold text-black"
                 >

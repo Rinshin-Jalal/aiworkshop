@@ -4,14 +4,13 @@ export interface RegistrationData {
   fullName: string;
   email: string;
   phone: string;
-  labOption: 'Vibe Coding' | 'Studying & Research' | 'General';
+  age: number;
+  gender: 'Male' | 'Female' | 'Other' | 'Prefer not to say';
+  place: string;
+  collegeSchool?: string;
+  course?: string;
   motivation?: string;
   createdAt?: string;
-}
-
-export enum LabOption {
-  VIBE_CODING = 'Vibe Coding & App Development',
-  RESEARCH = 'Studying & Research with AI',
 }
 
 export interface RecommendationResponse {
